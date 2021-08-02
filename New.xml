@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       
+   
+    
+   <bean id="b" class="B"/>
+    <!-- autowire="no its default explicitly we should write--> 
+    <!--<bean id="objA" class="A">
+   <property name='b' ref="objB"/>
+   </bean>-->
+   <!-- autowire="byType" in this bean type any property type in bean class should be same.seeter injection will be used -->
+   <bean id="objA" class="A" autowire="byType"/>
+   <!-- autowire="constructor" in this bean type and parameter type of constructor should be same.constructor injection will be used -->
+    <!--  <bean id="objA" class="A" autowire="constructor"></bean>-->
+   <!-- autowire="byName" In this bean name and property name in bean class should be same.setter injection will be used -->
+   <!-- <bean id="objA" class="A" autowire="byName"></bean>-->
+   <!-- autowire="default" will do autowiring for all beans by using the value of default default-autowire attribute -->
+   <!--  <bean id="objA" class="A" autowire="default"/>-->
+    </beans>
